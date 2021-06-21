@@ -1,0 +1,7 @@
+name: spigadier
+version: ${project.version}
+main: draylar.spigadier.Spigadier
+api-version: 1.16
+load: STARTUP
+authors: [ Draylar ]
+description: Spigadier API

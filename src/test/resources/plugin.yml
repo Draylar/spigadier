@@ -1,0 +1,7 @@
+name: spigadier-test
+version: ${project.version}
+main: draylar.test.SpigadierTestPlugin
+api-version: 1.16
+load: STARTUP
+authors: [ Draylar ]
+description: Spigadier Test Plugin
