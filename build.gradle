@@ -10,6 +10,11 @@ description = 'Spigadier'
 sourceCompatibility = JavaVersion.VERSION_16
 targetCompatibility = JavaVersion.VERSION_16
 
+Properties properties = new Properties()
+if (rootProject.file("local.properties").exists()) {
+    properties.load(rootProject.file("local.properties").newDataInputStream())
+}
+
 repositories {
     mavenLocal()
 
@@ -39,9 +44,26 @@ dependencies {
 }
 
 publishing {
+    repositories {
+        maven {
+            url "https://maven.draylar.dev/releases"
+            credentials {
+                username = properties.get("username")
+                password = properties.get("token")
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+
     publications {
         maven(MavenPublication) {
-            from(components.java)
+            groupId = 'draylar'
+            artifactId = 'spigadier'
+            version = project.version
+
+            from components.java
         }
     }
 }

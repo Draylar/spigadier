@@ -115,3 +115,4 @@ spigot/
 # Project exclude paths
 /.gradle/
 /build/
+local.properties
