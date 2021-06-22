@@ -4,6 +4,22 @@ Spigadier implements Mojang's [Brigadier](https://github.com/Mojang/brigadier) l
 
 ---
 
+### Installation
+
+```groovy
+repositories {
+    maven {
+        url = "https://maven.draylar.dev"
+    }
+}
+
+dependencies {
+    implementation 'draylar:spigadier:1.0.0'
+}
+```
+
+---
+
 ### Usage
 
 Spigadier implements a test command inside the /test/ source directory which showcases the power of Brigadier. 
